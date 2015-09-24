@@ -28,40 +28,31 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 30px 50px;
+  padding: 30px 20px;
 }
 /* Set Column Heights */
-.leftColumn,
-.middleColumn,
-.rightColumn {
-  height: calc( 100vh - 60px);
-}
 
-/* Left Column */
 
-.comingSoon {
-  font-family: 'dolbybook';
-  font-size: 16px;
-  color: black;
-  position: absolute;
-  bottom: 0;
+/* Top Row */
+.top-row {
+  height: 50px;
+  width: 100%;
 }
-  .socialLinks {
-    list-style: none;
-    padding: 0;
+  .top-left {
+    float: left;
   }
-    .socialLinks li {
-      display: inline-block;
-      padding-right: 5px;
-    }
-    .social-images {
-      height: 24px;
-      width: 24px;
-    }
+  .top-right {
+    float: right;
+  }
 
-/* Middle Column */
+/* Middle Row */
+.middle-row {
+  width: 100%;
+  height: calc( 100vh - 190px);
+}
 
 .middleColumn {
+  height: 100%;
   display: table;
 }
   .middleColumn-text {
@@ -79,17 +70,47 @@ body {
       font-size: 18px;
     }
 
-  /* Right Column */
+  
+
+  /* Bottom Row */
+  .bottom-row {
+    height: 100px;
+    width: 100%;
+  }
+    .bottom-left {
+      float: left;
+    }
+    .bottom-right {
+      float: right;
+    }
+
+  /* Bottom Left Column */
+  .comingSoon {
+    font-family: 'dolbybook';
+    font-size: 16px;
+  }
+  .socialLinks {
+    list-style: none;
+    padding: 0;
+  }
+    .socialLinks li {
+      display: inline-block;
+      padding-right: 5px;
+      cursor: pointer;
+    }
+    .social-images {
+      height: 24px;
+      width: 24px;
+    }
+  /* Bottom Right Column */
   .locationDetails {
-    position: absolute;
-    bottom: 0;
     text-align: right;
     font-family: 'dolbybook';
     font-size: 16px;
-    color: black;
   }
 
-  /* MailChimp Sign-Up */
+
+  /* MailChimp Sign-Up, override MC API styles */
   #mc_embed_signup {
     background: transparent !important;
   }
@@ -100,7 +121,8 @@ body {
     font-size: 14px;
     font-family: 'dolbybook';
     width: 190px;
-    float: left;
+    float: right;
+    margin-right: 40px;
   }
   input#mce-EMAIL.email:focus {
     outline: none;
@@ -128,4 +150,91 @@ body {
     padding: 4px 10px;
     font-size: 14px;
     font-family: 'dolbybook';
+    position: absolute;
+    right: 0;
+  }
+
+  /* Mobile Overides */
+  /* Hidden before mobile kicks in */
+  @media screen and (min-width: 750px) {
+    .mobile-comingSoon,
+    .mobile-social,
+    .mobile-MC{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    body {
+      padding: 30px 20px;
+    }
+    .logo-wrap {
+      float: none;
+      text-align: center;
+    }
+    .top-row #mc_embed_signup,
+    .bottom-row .socialLinks,
+    .bottom-left {
+      display: none;
+    }
+    .middle-row {
+      height: auto;
+    }
+    .bottom-right {
+      margin-top: 50px;
+      float: none;
+      text-align: center;
+      color: white;
+    }
+    .locationDetails {
+      text-align: center;
+    }
+    .mobile-comingSoon {
+      font-family: 'dolbybook';
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .mobile-MC {
+      margin-top: 80px;
+    }
+    .mobile-MC input#mce-EMAIL.email {
+      float: left;
+      margin-right: 0;
+      border: 1px solid black;
+      color: black;
+    }
+    .mobile-MC input#mc-embedded-subscribe.button {
+      float: left;
+      position: relative;
+      right: auto;
+      background: black;
+      color: white;
+    }
+    .mobile-social {
+      text-align: center;
+    }
+    .mobile-social .socialLinks {
+      display: block;
+      margin-left: 10px;
+    }
+      .mobile-social .social-images {
+        height: 28px;
+        width: 28px;
+      }
+    ::-webkit-input-placeholder {
+      color: black;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: black;  
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: black;  
+    }
+
+    :-ms-input-placeholder {  
+       color: black;  
+    }
   }
