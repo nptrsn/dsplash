@@ -28,7 +28,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 30px 20px;
+  padding: 40px 30px;
 }
 /* Set Column Heights */
 
@@ -52,7 +52,7 @@ body {
 /* Middle Row */
 .middle-row {
   width: 100%;
-  height: calc( 100vh - 190px);
+  height: calc( 100vh - 210px);
 }
 
 .middleColumn {
