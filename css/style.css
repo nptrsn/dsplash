@@ -41,6 +41,10 @@ body {
   .top-left {
     float: left;
   }
+    .dolby-logo {
+      cursor: pointer;
+      height: 28px;
+    }
   .top-right {
     float: right;
   }
@@ -54,6 +58,8 @@ body {
 .middleColumn {
   height: 100%;
   display: table;
+  max-width: 680px;
+  margin: 0 auto;
 }
   .middleColumn-text {
     display: table-cell;
@@ -68,6 +74,15 @@ body {
       font-family: 'dolbybook';
       color: white;
       font-size: 18px;
+    }
+    .header1 {
+      margin-bottom: 20px;
+    }
+    .header2 {
+      margin-top: 40px;
+    }
+    .header3 {
+      margin-top: 20px;
     }
 
   
@@ -87,7 +102,10 @@ body {
   /* Bottom Left Column */
   .comingSoon {
     font-family: 'dolbybook';
-    font-size: 16px;
+    font-size: 14px;
+  }
+  .comingSoon p {
+    margin: 0;
   }
   .socialLinks {
     list-style: none;
@@ -95,20 +113,22 @@ body {
   }
     .socialLinks li {
       display: inline-block;
-      padding-right: 5px;
+      padding-right: 7px;
       cursor: pointer;
     }
     .social-images {
-      height: 24px;
-      width: 24px;
+      height: 14px;
+      width: 14px;
     }
   /* Bottom Right Column */
   .locationDetails {
     text-align: right;
     font-family: 'dolbybook';
-    font-size: 16px;
+    font-size: 14px;
   }
-
+  .locationDetails p {
+    margin-bottom: 0;
+  }
 
   /* MailChimp Sign-Up, override MC API styles */
   #mc_embed_signup {
@@ -123,24 +143,25 @@ body {
     width: 190px;
     float: right;
     margin-right: 40px;
+    color: white;
   }
   input#mce-EMAIL.email:focus {
     outline: none;
   }
   ::-webkit-input-placeholder {
-   color: white;
+   color: white !important;
   }
 
   :-moz-placeholder { /* Firefox 18- */
-     color: white;  
+     color: white !important;  
   }
 
   ::-moz-placeholder {  /* Firefox 19+ */
-     color: white;  
+     color: white !important;  
   }
 
   :-ms-input-placeholder {  
-     color: white;  
+     color: white !important;  
   }
   input#mc-embedded-subscribe.button {
     margin-left: 10px;
@@ -153,13 +174,18 @@ body {
     position: absolute;
     right: 0;
   }
+  input#mc-embedded-subscribe.button:hover {
+    background: black;
+    color: white;
+  }
 
   /* Mobile Overides */
   /* Hidden before mobile kicks in */
   @media screen and (min-width: 750px) {
     .mobile-comingSoon,
     .mobile-social,
-    .mobile-MC{
+    .mobile-MC,
+    .dolby-logo--mobile {
       display: none;
     }
   }
@@ -167,17 +193,27 @@ body {
     body {
       padding: 30px 20px;
     }
+    .top-row {
+      height: auto;
+    }
     .logo-wrap {
       float: none;
       text-align: center;
     }
     .top-row #mc_embed_signup,
     .bottom-row .socialLinks,
-    .bottom-left {
+    .bottom-left,
+    .dolby-logo {
       display: none;
     }
     .middle-row {
       height: auto;
+    }
+    .middleColumn {
+      display: block;
+    }
+    .middleColumn-text {
+      display: block;
     }
     .bottom-right {
       margin-top: 50px;
@@ -185,18 +221,27 @@ body {
       text-align: center;
       color: white;
     }
+    .dolby-logo--mobile {
+      display: block;
+      margin: 0 auto;
+    }
     .locationDetails {
       text-align: center;
     }
     .mobile-comingSoon {
       font-family: 'dolbybook';
-      font-size: 16px;
+      font-size: 14px;
       color: white;
       text-align: center;
       margin-top: 20px;
     }
     .mobile-MC {
       margin-top: 80px;
+      margin-bottom: 20px;
+    }
+    #mc_embed_signup {
+      width: 250px;
+      margin: 0 auto;
     }
     .mobile-MC input#mce-EMAIL.email {
       float: left;
@@ -211,30 +256,37 @@ body {
       background: black;
       color: white;
     }
+    .mobile-MC input#mc-embedded-subscribe.button:hover {
+      color: black;
+      background: white;
+    }
     .mobile-social {
       text-align: center;
     }
     .mobile-social .socialLinks {
       display: block;
-      margin-left: 10px;
     }
       .mobile-social .social-images {
         height: 28px;
         width: 28px;
       }
     ::-webkit-input-placeholder {
-      color: black;
+      color: black !important;
     }
 
     :-moz-placeholder { /* Firefox 18- */
-       color: black;  
+       color: black !important;  
     }
 
     ::-moz-placeholder {  /* Firefox 19+ */
-       color: black;  
+       color: black !important;  
     }
 
     :-ms-input-placeholder {  
-       color: black;  
+       color: black !important;  
     }
   }
+
+  /* Media Queries to address request for no widowed headers */
+  @media screen and ()
+  .middleColumn
